@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAMIOS Bingo — Game</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>VAMIOS <span>BINGO</span></h1>
+    <div id="statusBadge" class="status-badge">waiting</div>
+  </header>
+
+  <main>
+    <div id="currentNumber" class="current-number">--</div>
+    <div id="calledStrip" class="called-strip"></div>
+
+    <div id="playerBoard" class="player-board"></div>
+
+    <button id="bingoBtn" class="primary-btn bingo-btn">BINGO!</button>
+
+    <div id="winnerScreen" class="winner-screen hidden">
+      <h2 id="winnerText"></h2>
+      <p id="prizeText"></p>
+    </div>
+  </main>
+
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

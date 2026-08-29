@@ -1,0 +1,136 @@
+:root {
+  --bg: #0f1420;
+  --card: #1a2233;
+  --accent: #ffb703;
+  --accent-2: #2ec4b6;
+  --text: #f1f1f1;
+  --muted: #9aa4b2;
+  --danger: #e63946;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding-bottom: 40px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--card);
+}
+
+.topbar h1 { font-size: 18px; margin: 0; }
+.topbar h1 span { color: var(--accent); }
+
+.balance, .balance-large { font-weight: 600; color: var(--accent-2); }
+.balance-large { font-size: 32px; text-align: center; margin: 16px 0; }
+
+main { padding: 16px; max-width: 480px; margin: 0 auto; }
+
+.hidden { display: none !important; }
+
+.stake-grid, .board-grid {
+  display: grid;
+  gap: 8px;
+}
+.stake-grid { grid-template-columns: repeat(4, 1fr); }
+.board-grid { grid-template-columns: repeat(8, 1fr); max-height: 320px; overflow-y: auto; }
+
+.stake-btn, .board-cell, .bingo-cell {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid #2a3448;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.stake-btn:active, .board-cell:not(:disabled):active { background: var(--accent); color: #000; }
+.board-cell.taken { opacity: 0.3; cursor: not-allowed; }
+.board-cell.selected { background: var(--accent-2); color: #000; }
+
+.primary-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.primary-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.countdown { font-size: 48px; text-align: center; color: var(--accent); font-weight: 800; }
+
+.current-number {
+  font-size: 56px;
+  text-align: center;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 10px 0;
+}
+
+.called-strip { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 16px; }
+.called-chip {
+  background: var(--card);
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  color: var(--accent-2);
+}
+
+.player-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin: 16px 0;
+}
+.bingo-cell { aspect-ratio: 1; font-size: 16px; font-weight: 700; }
+.bingo-cell.marked { background: var(--accent-2); color: #000; }
+
+.bingo-btn { background: var(--danger); color: #fff; font-size: 20px; }
+
+.status-badge {
+  background: var(--card);
+  border: 1px solid var(--accent-2);
+  color: var(--accent-2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.winner-screen { text-align: center; margin-top: 24px; }
+.winner-screen h2 { color: var(--accent); font-size: 28px; }
+
+.tx-list { display: flex; flex-direction: column; gap: 8px; }
+.tx-row {
+  display: flex;
+  justify-content: space-between;
+  background: var(--card);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.tx-status { text-transform: uppercase; font-size: 11px; color: var(--muted); }
+.tx-status.completed, .tx-status.approved { color: var(--accent-2); }
+.tx-status.pending { color: var(--accent); }
+.tx-status.rejected { color: var(--danger); }
+
+.hint { color: var(--muted); font-size: 13px; text-align: center; }
+.back-btn { background: var(--card); color: var(--text); border: 1px solid #2a3448; }

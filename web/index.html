@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAMIOS Bingo — Lobby</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>VAMIOS <span>BINGO</span></h1>
+    <div id="balance" class="balance">-- credits</div>
+  </header>
+
+  <main>
+    <section id="stakeSelect">
+      <h2>Choose your stake</h2>
+      <div class="stake-grid">
+        <button class="stake-btn" data-stake="10">10</button>
+        <button class="stake-btn" data-stake="15">15</button>
+        <button class="stake-btn" data-stake="25">25</button>
+        <button class="stake-btn" data-stake="50">50</button>
+      </div>
+    </section>
+
+    <section id="boardSelect" class="hidden">
+      <h2>Pick your board (1–100)</h2>
+      <div id="boardGrid" class="board-grid"></div>
+      <button id="joinBtn" class="primary-btn" disabled>Join Game</button>
+    </section>
+
+    <section id="waitingRoom" class="hidden">
+      <h2>Waiting for players…</h2>
+      <div id="countdown" class="countdown">60</div>
+      <p id="playerCount">0 players joined</p>
+    </section>
+  </main>
+
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/lobby.js"></script>
+</body>
+</html>

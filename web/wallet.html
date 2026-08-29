@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAMIOS Bingo — Wallet</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>VAMIOS <span>BINGO</span></h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Balance</h2>
+      <div id="balance" class="balance-large">-- credits</div>
+      <p class="hint">Deposits and withdrawals are requested here and approved by an admin via the Telegram bot — no funds move automatically.</p>
+    </section>
+
+    <section>
+      <h2>Transaction history</h2>
+      <div id="txList" class="tx-list"></div>
+    </section>
+
+    <a href="index.html" class="primary-btn back-btn">Back to Lobby</a>
+  </main>
+
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/wallet.js"></script>
+</body>
+</html>

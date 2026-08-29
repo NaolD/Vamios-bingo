@@ -1,0 +1,14 @@
+{
+  "name": "vamios-bingo-controller",
+  "version": "1.0.0",
+  "description": "Authoritative game clock and number-calling service for VAMIOS Bingo",
+  "main": "gameController.js",
+  "scripts": {
+    "start": "node gameController.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
